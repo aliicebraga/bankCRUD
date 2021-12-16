@@ -1,0 +1,47 @@
+<div class="container d-flex justify-content-between mt-4 p-3">
+  <h2 class="text-center">Nova Transferência</h2>
+  <button routerLink="/sistema" class="btn btn-dark" appOrange>
+    Registros
+  </button>
+</div>
+<div class="container">
+  <form>
+    <div class="input-group mb-3 col-lg-6 col-md-6 col-sm-12">
+      <span class="input-group-text bi bi-person" appOrange></span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nome"
+        name="nome_cliente"
+        [(ngModel)]="transfer.nome_cliente"
+        appOrange
+      />
+    </div>
+    <div class="input-group mb-3 col-lg-6 col-md-6 col-sm-12">
+      <span class="input-group-text bi bi-credit-card-2-front" appOrange></span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Conta"
+        name="conta_cliente"
+        [(ngModel)]="transfer.conta_cliente"
+        appOrange
+      />
+    </div>
+
+    <div class="input-group mb-3 col-lg-6 col-md-6 col-sm-12">
+      <span class="input-group-text bi bi-coin" appOrange></span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Valor"
+        name="valor"
+        [(ngModel)]="transfer.valor"
+        appOrange
+      />
+    </div>
+    <div class="input-group mb-3 d-flex justify-content-center">
+      <button (click)="adicionar()" class="btn btn-success">Registrar</button>
+    </div>
+  </form>
+</div>
