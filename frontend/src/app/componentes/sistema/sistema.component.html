@@ -1,0 +1,36 @@
+<div class="container d-flex justify-content-between mt-4 p-3">
+  <h2 class="text-center">Dados Bancários</h2>
+  <button routerLink="/add" class="btn btn-dark" appOrange>
+    Nova Transferência
+  </button>
+</div>
+<table class="table table-dark table-hover" appOrange>
+  <thead>
+    <tr>
+      <th scope="col">Conta</th>
+      <th scope="col">Nome Cliente</th>
+      <th scope="col">Valor da Transferência</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transfer of ListarTransfer">
+      <th scope="row">{{ transfer.conta_cliente }}</th>
+      <td>{{ transfer.nome_cliente }}</td>
+      <td>{{ transfer.valor }}</td>
+      <td>
+        <button
+          (click)="editar(transfer.id_transfer)"
+          class="bi bi-pencil-square btn btn-outline-light"
+        ></button>
+      </td>
+      <td>
+        <button
+          (click)="deletar(transfer.id_transfer)"
+          class="bi bi-trash btn btn-outline-danger"
+        ></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
